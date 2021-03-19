@@ -1,0 +1,85 @@
+.navigation{
+
+    height: 10rem;
+    font-size: 1.7rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    @include respond(phone){
+        font-size: 3.7rem;
+        flex-direction: column;
+        height: 15rem;
+    }
+   
+&__list{
+
+   display: flex;
+   
+    
+    // align-self: stretch;
+
+    @include respond(phone){
+        flex-direction: column;
+        position: fixed;
+        transform: translate(-50%, 70%);
+        left: 150%;
+        z-index: 10;
+        transition: all .4s;
+    }
+
+  
+}
+#check:checked ~ .navigation__list{
+    left: 50%;
+}
+&__item{
+    
+    display: flex;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+    padding: 0rem 4rem;
+    &:not(:first-child){
+       
+    }
+    &:hover .navigation__link{
+        color: rgb(168, 168, 168);
+    }
+    @include respond(tab-port){
+        padding: 2rem;
+    }
+  
+
+   
+}
+&__link{
+    text-decoration: none;
+    color: var(--color-white);
+    transition: all .2s;
+}
+}
+.checkbtn{
+
+    display: none;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    color: white;
+    cursor: pointer;
+
+    @include respond(phone){
+       display: flex;
+       position:fixed;
+       z-index:10;
+    }
+  
+
+}
+.navigation__checkbox{
+    display: none;
+}
